@@ -1,0 +1,392 @@
+/* GLOBAL STYLES */
+
+* { /* Get rid of default styles */
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%; /* need this to make the height of the body work (otherwise it doesn't react) */
+}
+
+body {
+	/*similar to the gradient use in steam */
+	background: #1a4661; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1a4661 0%, #1b2838 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #1a4661 0%,#1b2838 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #1a4661 0%,#1b2838 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a4661', endColorstr='#1b2838',GradientType=0 ); /* IE6-9 */
+
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	height: 100%;
+	color: white;
+	padding: 20px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.center {
+	text-align: center;
+}
+
+/* LOGIN */
+
+#login {
+  margin-top: 20%;
+}
+
+form {
+	margin: auto;
+	max-width: 10%;
+	border: #328FBA solid 2px;
+	padding: 10px;
+}
+
+form label, form input {
+	display: block;
+}
+
+#steamid {
+	margin: 10px 0;
+}
+
+input[type="submit"] {
+  padding: 3px 10px;
+}
+
+#error {
+  margin-bottom: 10px;
+  color: red;
+  text-align: center;
+}
+
+/* HEADER */
+
+a {
+	color: white;
+}
+
+header {
+	margin-bottom: 20px;
+}
+
+header ul {
+	list-style-type: none;
+}
+
+/* HOME */
+
+figure {
+	margin-right: 20px;
+}
+
+#friend .playerInfo {
+	margin-top: 50px;
+	margin-right: 30px;
+}
+
+/* HOURS */
+
+#comment ul {
+	padding-left: 50px;
+}
+
+.green {
+	background-color: #8fc800;
+	height: 15px;
+	margin-right: 5px;
+}
+
+.playerHoursBlock {
+	margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.miniPlayerAvatar figcaption {
+	max-width: 64px; /* width of avatar */
+
+  /* needed for text-overflow to work */
+  white-space: nowrap;
+  overflow: hidden;
+
+	text-overflow: ellipsis;
+  text-overflow: "…";
+}
+
+.hourSection {
+	width: 50%;
+	margin-top: 20px;
+}
+
+.gameIcon {
+  margin-left: 10px;
+}
+
+/* ACHIEVEMENTS PAGE */
+
+.gameImg {
+	display: inline-block;
+	margin: 5px;
+}
+
+/* ACHIEVEMENT LIGHTBOX */
+
+.achievementArea {
+  display: none;
+  width: 800px;
+  height: 600px;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.84);
+  text-align: left;
+  padding: 20px;
+  overflow-y: scroll;
+
+  /*position the image clicked in the middle of this area */
+  left: 29%;
+  top: 20%;
+}
+
+.playerAchBlock {
+	margin-bottom: 15px;
+}
+
+.playerAchBlock p {
+  display: inline-block;
+  position: relative;
+  bottom: 44px; /* half of figure height, center vertically the text */
+}
+
+.achievementList {
+  display: inline-block;
+  max-width: 87%;
+  vertical-align: top;
+}
+
+.achievementList img {
+  margin-right: 5px;
+}
+
+/* LOAD ANIM ON GAME */
+
+#floatingCirclesG{
+  display:none;
+  position: fixed;
+  left: 48%;
+  top: 45%;
+  background-color: rgba(0, 0, 0, 0.84);
+  width:125px;
+  height:125px;
+  transform:scale(0.6);
+    -o-transform:scale(0.6);
+    -ms-transform:scale(0.6);
+    -webkit-transform:scale(0.6);
+    -moz-transform:scale(0.6);
+}
+
+.f_circleG{
+  position:absolute;
+  background-color:rgb(255,255,255);
+  height:22px; /*Before: 22; */
+  width:22px;
+  border-radius:12px;
+    -o-border-radius:12px;
+    -ms-border-radius:12px;
+    -webkit-border-radius:12px;
+    -moz-border-radius:12px;
+  animation-name:f_fadeG;
+    -o-animation-name:f_fadeG;
+    -ms-animation-name:f_fadeG;
+    -webkit-animation-name:f_fadeG;
+    -moz-animation-name:f_fadeG;
+  animation-duration:1.2s;
+    -o-animation-duration:1.2s;
+    -ms-animation-duration:1.2s;
+    -webkit-animation-duration:1.2s;
+    -moz-animation-duration:1.2s;
+  animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+  animation-direction:normal;
+    -o-animation-direction:normal;
+    -ms-animation-direction:normal;
+    -webkit-animation-direction:normal;
+    -moz-animation-direction:normal;
+}
+
+#frotateG_01{
+  left:0;
+  top:51px;
+  animation-delay:0.45s;
+    -o-animation-delay:0.45s;
+    -ms-animation-delay:0.45s;
+    -webkit-animation-delay:0.45s;
+    -moz-animation-delay:0.45s;
+}
+
+#frotateG_02{
+  left:15px;
+  top:15px;
+  animation-delay:0.6s;
+    -o-animation-delay:0.6s;
+    -ms-animation-delay:0.6s;
+    -webkit-animation-delay:0.6s;
+    -moz-animation-delay:0.6s;
+}
+
+#frotateG_03{
+  left:51px;
+  top:0;
+  animation-delay:0.75s;
+    -o-animation-delay:0.75s;
+    -ms-animation-delay:0.75s;
+    -webkit-animation-delay:0.75s;
+    -moz-animation-delay:0.75s;
+}
+
+#frotateG_04{
+  right:15px;
+  top:15px;
+  animation-delay:0.9s;
+    -o-animation-delay:0.9s;
+    -ms-animation-delay:0.9s;
+    -webkit-animation-delay:0.9s;
+    -moz-animation-delay:0.9s;
+}
+
+#frotateG_05{
+  right:0;
+  top:51px;
+  animation-delay:1.05s;
+    -o-animation-delay:1.05s;
+    -ms-animation-delay:1.05s;
+    -webkit-animation-delay:1.05s;
+    -moz-animation-delay:1.05s;
+}
+
+#frotateG_06{
+  right:15px;
+  bottom:15px;
+  animation-delay:1.2s;
+    -o-animation-delay:1.2s;
+    -ms-animation-delay:1.2s;
+    -webkit-animation-delay:1.2s;
+    -moz-animation-delay:1.2s;
+}
+
+#frotateG_07{
+  left:51px;
+  bottom:0;
+  animation-delay:1.35s;
+    -o-animation-delay:1.35s;
+    -ms-animation-delay:1.35s;
+    -webkit-animation-delay:1.35s;
+    -moz-animation-delay:1.35s;
+}
+
+#frotateG_08{
+  left:15px;
+  bottom:15px;
+  animation-delay:1.5s;
+    -o-animation-delay:1.5s;
+    -ms-animation-delay:1.5s;
+    -webkit-animation-delay:1.5s;
+    -moz-animation-delay:1.5s;
+}
+
+@keyframes f_fadeG{
+  0%{
+    background-color:rgb(0,0,0);
+  }
+
+  100%{
+    background-color:rgb(255,255,255);
+  }
+}
+
+@-o-keyframes f_fadeG{
+  0%{
+    background-color:rgb(0,0,0);
+  }
+
+  100%{
+    background-color:rgb(255,255,255);
+  }
+}
+
+@-ms-keyframes f_fadeG{
+  0%{
+    background-color:rgb(0,0,0);
+  }
+
+  100%{
+    background-color:rgb(255,255,255);
+  }
+}
+
+@-webkit-keyframes f_fadeG{
+  0%{
+    background-color:rgb(0,0,0);
+  }
+
+  100%{
+    background-color:rgb(255,255,255);
+  }
+}
+
+@-moz-keyframes f_fadeG{
+  0%{
+    background-color:rgb(0,0,0);
+  }
+
+  100%{
+    background-color:rgb(255,255,255);
+  }
+}
+
+/* LOAD ANIM ON PAGE */
+.pageLoader{
+	position: fixed;
+	top: 25%;
+	left: 40%;
+	font-size: 30px;
+  height: 30px; /*needed because the p inside is in absolute position */
+  width: 360px;
+  padding: 10px;
+	background-color: rgba(0, 0, 0, 0.84);
+	color: white;
+  z-index: 9;
+}
+
+.pageLoader p {
+  position: absolute; /* needed because for some reason the text moved with the animation (only on one page, but i don't know why. It works with this) */
+  left: 10px; /* same as the padding of the pageLoader */
+}
+
+.pageLoader p:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+  animation: ellipsis steps(4,end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;    
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;    
+  }
+}
